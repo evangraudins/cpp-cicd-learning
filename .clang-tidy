@@ -1,0 +1,11 @@
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  readability-*,
+  performance-*,
+  bugprone-*
+
+WarningsAsErrors: ""
+HeaderFilterRegex: "include/.*"
