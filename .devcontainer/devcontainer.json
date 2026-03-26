@@ -1,0 +1,30 @@
+{
+  "name": "C++ CI/CD Learning",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "xaver.clang-format",
+        "github.actions"
+      ],
+      "settings": {
+        "cmake.configureOnOpen": true,
+        "C_Cpp.intelliSenseEngine": "disabled",
+        "clangd.path": "/usr/bin/clangd"
+      }
+    }
+  },
+
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y clang-format clang-tidy ninja-build && cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+
+  "remoteUser": "vscode"
+}
