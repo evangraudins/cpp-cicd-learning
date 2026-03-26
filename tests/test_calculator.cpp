@@ -3,7 +3,7 @@
 #include "math/calculator.h"
 
 class CalculatorTest : public ::testing::Test {
-protected:
+   protected:
     math::Calculator calc;
 };
 
